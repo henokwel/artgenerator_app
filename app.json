@@ -1,0 +1,12 @@
+{
+  "name": "artgen_app",
+  "displayName": "artgen_app",
+  "expo": {
+    "name": "artgen_app",
+    "slug": "artgen_app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
