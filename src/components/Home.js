@@ -123,21 +123,21 @@ export default function Home({ navigation }) {
                 data={DataPattern}
 
 
-                onScroll={
-                    Animated.event(
-                        [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-                        { useNativeDriver: true }
-                    )
-                }
-                keyExtractor={item => item.id}
+                // onScroll={
+                //     Animated.event(
+                //         [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+                //         { useNativeDriver: true }
+                //     )
+                // }
+                // keyExtractor={item => item.id}
 
-                contentContainerStyle={{
-                    padding: SPACE,
-                    paddingTop: StatusBar.currentHeight || 42,
-                    // width,
-                    alignItems: "center",
+                // contentContainerStyle={{
+                //     padding: SPACE,
+                //     paddingTop: StatusBar.currentHeight || 42,
+                //     // width,
+                //     alignItems: "center",
                     
-                }}
+                // }}
 
                 renderItem={({ item, index }) => {
 
