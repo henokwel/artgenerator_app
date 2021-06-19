@@ -114,11 +114,74 @@ export default function Home({ navigation }) {
                 "73A580"
             ]
         },
+        {
+            "id": "F4866s8",
+            "pattern": [
+                "DD614A",
+                "F48668",
+                "F4A698",
+                "73A580"
+            ]
+        },
+        {
+            "id": "dsdffdsf",
+            "pattern": [
+                "7C6C77",
+                "96CFC9",
+                "467292",
+                "AAA694"
+            ]
+        },
+        {
+            "id": "skdlj3ffsdf",
+            "pattern": [
+                "283D3B",
+                "EDDDD4",
+                "C44536",
+                "772E25"
+            ]
+        },
+        {
+            "id": "73A4580",
+            "pattern": [
+                "DD614A",
+                "F48668",
+                "F4A698",
+                "73A580"
+            ]
+        },
+        {
+            "id": "dsfd34sf",
+            "pattern": [
+                "7C6C77",
+                "96CFC9",
+                "467292",
+                "AAA694"
+            ]
+        },
+        {
+            "id": "skd8ljfsdf",
+            "pattern": [
+                "283D3B",
+                "EDDDD4",
+                "C44536",
+                "772E25"
+            ]
+        },
+        {
+            "id": "73A58980",
+            "pattern": [
+                "DD614A",
+                "F48668",
+                "F4A698",
+                "73A580"
+            ]
+        },
 
     ]
     const SPACE = 20;
     const AV_Size = 70;
-    const ITEM_SIZE = AV_Size + SPACE * 3;
+    const ITEM_SIZE = AV_Size + SPACE * 2;
 
     const scrollY = React.useRef(new Animated.Value(0)).current
 
@@ -129,10 +192,11 @@ export default function Home({ navigation }) {
 
         }}>
             <StatusBar hidden />
+            <Text>Colorful Mountain</Text>
 
             <Animated.FlatList
-                data={Data}
-                keyExtractor={item => item.key}
+                data={DataPattern}
+                keyExtractor={item => item.id}
                 contentContainerStyle={{
                     padding: SPACE,
                     paddingTop: StatusBar.currentHeight || 42
@@ -153,8 +217,11 @@ export default function Home({ navigation }) {
                         outputRange: [1, 1, 1, 0]
                     })
 
+
                     return <PalletCard
-                        onPress={() => console.log(item.pattern)
+                        onPress={() => {
+                            navigation.navigate("Showroom")
+                        }
                         }
                     >
 
@@ -162,30 +229,65 @@ export default function Home({ navigation }) {
 
                             style={{
                                 flexDirection: "row",
+                                alignItems: "center",
+                                justifyContent: "center",
                                 padding: SPACE,
                                 marginBottom: SPACE,
-                                backgroundColor: "grey",
+                                // backgroundColor: "grey",
                                 shadowColor: "#000",
                                 shadowOpacity: .3,
                                 shadowRadius: 20,
-                                elevation: 3,
+                                // elevation: 3,
                                 shadowOffset: {
                                     width: 0,
                                     height: 10
                                 },
-                                transform: [{ scale: scale }]
+                                transform: [{ scale }],
+                                height: 90
 
                             }}
                         >
+                            <View
+                                style={{
+                                    flexDirection: "row",
+                                    borderWidth: 2,
+                                    // width:width
+                                }}
+                            >
 
+                                <View
+                                    style={{
+                                        backgroundColor: `#${item.pattern[0]}`,
+                                        width: 50,
+                                        height: 100,
+                                        // borderWidth:1
+                                    }}
+                                />
+                                <View
+                                    style={{
+                                        backgroundColor: `#${item.pattern[1]}`,
+                                        width: 50,
+                                        height: 100,
+                                        // borderWidth:1
+                                    }}
+                                />
+                                <View
+                                    style={{
+                                        backgroundColor: `#${item.pattern[2]}`,
+                                        width: 50,
+                                        height: 100,
+                                        // borderWidth:1
+                                    }}
+                                />
+                                <View
+                                    style={{
+                                        backgroundColor: `#${item.pattern[3]}`,
+                                        width: 50,
+                                        height: 100,
+                                        // borderWidth:1
+                                    }}
+                                />
 
-                            <View style={{
-                                width: AV_Size, height: AV_Size, backgroundColor: "green",
-                                marginRight: SPACE / 2
-                            }} />
-
-                            <View>
-                                <Text>{item.name}</Text>
                             </View>
                         </Animated.View>
                     </PalletCard>
