@@ -3,10 +3,13 @@ import React, { useRef } from 'react'
 import {
     StatusBar, FlatList, Image, Animated, Text, View,
     Dimensions, StyleSheet,
-    TouchableOpacity, Easing, SafeAreaViewBase, SafeAreaView
+    TouchableOpacity, Easing, SafeAreaViewBase, SafeAreaView,
+    Button,
+    Pressable
 } from 'react-native';
 import faker from 'faker'
 
+import PalletCard from './PalletCard'
 const { width, height } = Dimensions.get("screen")
 
 export default function Home({ navigation }) {
@@ -14,7 +17,18 @@ export default function Home({ navigation }) {
     const Data = [...Array(15).keys()].map((_, i) => {
         return {
             key: faker.datatype.uuid(),
-            name: faker.name.findName()
+            name: faker.name.findName(),
+            pattern: [
+                {
+                    "id": "dsfdsf",
+                    "pattern": [
+                        "7C6C77",
+                        "96CFC9",
+                        "467292",
+                        "AAA694"
+                    ]
+                }
+            ]
         }
     })
 
@@ -109,7 +123,6 @@ export default function Home({ navigation }) {
     const scrollY = React.useRef(new Animated.Value(0)).current
 
 
-
     return (
         <View style={{
             flex: 1,
@@ -133,39 +146,49 @@ export default function Home({ navigation }) {
                 renderItem={({ item, index }) => {
 
                     const inputRange = [-1, 0, ITEM_SIZE * index, ITEM_SIZE * (index + 3)]
+                    const opacityInputRange = [-1, 0, ITEM_SIZE * index, ITEM_SIZE * (index + 3)]
 
                     const scale = scrollY.interpolate({
                         inputRange,
                         outputRange: [1, 1, 1, 0]
                     })
 
-                    return <Animated.View
-                        style={{
-                            flexDirection: "row",
-                            padding: SPACE,
-                            marginBottom: SPACE,
-                            backgroundColor: "grey",
-                            shadowColor: "#000",
-                            shadowOpacity: .3,
-                            shadowRadius: 20,
-                            elevation: 3,
-                            shadowOffset: {
-                                width: 0,
-                                height: 10
-                            },
-                            transform: [{ scale: scale }]
-
-                        }}
+                    return <PalletCard
+                        onPress={() => console.log(item.pattern)
+                        }
                     >
-                        <View style={{
-                            width: AV_Size, height: AV_Size , backgroundColor: "green",
-                            marginRight: SPACE / 2
-                        }} />
 
-                        <View>
-                            <Text>{item.name}</Text>
-                        </View>
-                    </Animated.View>
+                        <Animated.View
+
+                            style={{
+                                flexDirection: "row",
+                                padding: SPACE,
+                                marginBottom: SPACE,
+                                backgroundColor: "grey",
+                                shadowColor: "#000",
+                                shadowOpacity: .3,
+                                shadowRadius: 20,
+                                elevation: 3,
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 10
+                                },
+                                transform: [{ scale: scale }]
+
+                            }}
+                        >
+
+
+                            <View style={{
+                                width: AV_Size, height: AV_Size, backgroundColor: "green",
+                                marginRight: SPACE / 2
+                            }} />
+
+                            <View>
+                                <Text>{item.name}</Text>
+                            </View>
+                        </Animated.View>
+                    </PalletCard>
                 }}
             />
         </View>
