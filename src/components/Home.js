@@ -11,7 +11,7 @@ const { width, height } = Dimensions.get("screen")
 
 export default function Home({ navigation }) {
 
-    const Data = [...Array(10).keys()].map((_, i) => {
+    const Data = [...Array(15).keys()].map((_, i) => {
         return {
             key: faker.datatype.uuid(),
             name: faker.name.findName()
@@ -103,100 +103,70 @@ export default function Home({ navigation }) {
 
     ]
     const SPACE = 20;
-    const AV_Size = 50;
-    const ITEM_SIZE = AV_Size * SPACE * 3;
+    const AV_Size = 70;
+    const ITEM_SIZE = AV_Size + SPACE * 3;
 
     const scrollY = React.useRef(new Animated.Value(0)).current
+
+
+
     return (
         <View style={{
             flex: 1,
-            // backgroundColor: "green",
-            paddingTop:SPACE,
-            
-
-
 
         }}>
-
+            <StatusBar hidden />
 
             <Animated.FlatList
-                data={DataPattern}
+                data={Data}
+                keyExtractor={item => item.key}
+                contentContainerStyle={{
+                    padding: SPACE,
+                    paddingTop: StatusBar.currentHeight || 42
+                }}
 
-
-                // onScroll={
-                //     Animated.event(
-                //         [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-                //         { useNativeDriver: true }
-                //     )
-                // }
-                // keyExtractor={item => item.id}
-
-                // contentContainerStyle={{
-                //     padding: SPACE,
-                //     paddingTop: StatusBar.currentHeight || 42,
-                //     // width,
-                //     alignItems: "center",
-                    
-                // }}
+                onScroll={Animated.event(
+                    [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+                    { useNativeDriver: true }
+                )}
 
                 renderItem={({ item, index }) => {
 
-                    const inputRange = [
-                        -1,
-                        0,
-                        ITEM_SIZE * index,
-                        ITEM_SIZE * (index + 1)
-                    ]
+                    const inputRange = [-1, 0, ITEM_SIZE * index, ITEM_SIZE * (index + 3)]
 
-                    const opacityinputRange = [
-                        -1,
-                        0,
-                        ITEM_SIZE * index,
-                        ITEM_SIZE * (index + .5)
-                    ]
                     const scale = scrollY.interpolate({
                         inputRange,
                         outputRange: [1, 1, 1, 0]
                     })
 
-                    const opacity = scrollY.interpolate({
-                        inputRange: opacityinputRange,
-                        outputRange: [1, 1, 1, 0]
-                    })
-                    // Color Pallet Card
-                    return <Animated.View style={{
-                        flexDirection: "row",
-                        justifyContent: "center",
-                        borderWidth: 5,
-                        width: 208,
-                        marginBottom: SPACE,
-                        shadowColor: "#000",
-                        shadowOffset: {
-                            width: 0,
-                            height: 10
-                        },
-                        shadowRadius: 20,
-                        shadowOpacity:.3,
-                        transform: [{ scale }]
+                    return <Animated.View
+                        style={{
+                            flexDirection: "row",
+                            padding: SPACE,
+                            marginBottom: SPACE,
+                            backgroundColor: "grey",
+                            shadowColor: "#000",
+                            shadowOpacity: .3,
+                            shadowRadius: 20,
+                            elevation: 3,
+                            shadowOffset: {
+                                width: 0,
+                                height: 10
+                            },
+                            transform: [{ scale: scale }]
 
+                        }}
+                    >
+                        <View style={{
+                            width: AV_Size, height: AV_Size , backgroundColor: "green",
+                            marginRight: SPACE / 2
+                        }} />
 
-                    }}>
-                        {item.pattern.map((item, index) => {
-                            return <View
-                                keys={index + item}
-                                style={{
-                                    width: 50, height: 100,
-                                    backgroundColor: `#${item}`,
-                                    flexDirection: "row",
-                                    
-                                    
-                                }}>
-
-                            </View>
-                        })}
+                        <View>
+                            <Text>{item.name}</Text>
+                        </View>
                     </Animated.View>
                 }}
-
             />
         </View>
     );
