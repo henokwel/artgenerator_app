@@ -34,16 +34,16 @@ export default function Home({ navigation }) {
 
     const DataPattern = [
         {
-            "id": "dsfdsf",
+            "id": "dsf3dsf",
             "pattern": [
-                "7C6C77",
                 "96CFC9",
                 "467292",
-                "AAA694"
+                "AAA694",
+                "F4E8E8"
             ]
         },
         {
-            "id": "skdlsdfjfsdf",
+            "id": "skdlsdf2jfsdf",
             "pattern": [
                 "283D3B",
                 "EDDDD4",
@@ -52,7 +52,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "F4866s8",
+            "id": "F48656s8",
             "pattern": [
                 "DD614A",
                 "F48668",
@@ -61,7 +61,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "dsdffdsf",
+            "id": "dsdffd4sf",
             "pattern": [
                 "7C6C77",
                 "96CFC9",
@@ -70,7 +70,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "skdlj3ffsdf",
+            "id": "skdlj3ff3sdf",
             "pattern": [
                 "283D3B",
                 "EDDDD4",
@@ -79,7 +79,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "73A4580",
+            "id": "753A4580",
             "pattern": [
                 "DD614A",
                 "F48668",
@@ -88,7 +88,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "dsfd34sf",
+            "id": "dsfd434sf",
             "pattern": [
                 "7C6C77",
                 "96CFC9",
@@ -97,7 +97,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "skd8ljfsdf",
+            "id": "skd8l3jfsdf",
             "pattern": [
                 "283D3B",
                 "EDDDD4",
@@ -106,7 +106,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "73A58980",
+            "id": "73A585980",
             "pattern": [
                 "DD614A",
                 "F48668",
@@ -115,7 +115,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "F4866s8",
+            "id": "F48566s8",
             "pattern": [
                 "DD614A",
                 "F48668",
@@ -124,7 +124,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "dsdffdsf",
+            "id": "dsdffds4f",
             "pattern": [
                 "7C6C77",
                 "96CFC9",
@@ -133,7 +133,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "skdlj3ffsdf",
+            "id": "skdlj3ff4sdf",
             "pattern": [
                 "283D3B",
                 "EDDDD4",
@@ -142,7 +142,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "73A4580",
+            "id": "73A45840",
             "pattern": [
                 "DD614A",
                 "F48668",
@@ -151,7 +151,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "dsfd34sf",
+            "id": "dsfd345sf",
             "pattern": [
                 "7C6C77",
                 "96CFC9",
@@ -160,7 +160,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "skd8ljfsdf",
+            "id": "skd8lj4fsdf",
             "pattern": [
                 "283D3B",
                 "EDDDD4",
@@ -169,7 +169,7 @@ export default function Home({ navigation }) {
             ]
         },
         {
-            "id": "73A58980",
+            "id": "73A589480",
             "pattern": [
                 "DD614A",
                 "F48668",
@@ -220,7 +220,10 @@ export default function Home({ navigation }) {
 
                     return <PalletCard
                         onPress={() => {
-                            navigation.navigate("Showroom")
+                            navigation.navigate("Showroom",{
+                                index,
+                                item
+                            })
                         }
                         }
                     >

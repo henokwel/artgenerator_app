@@ -1,22 +1,38 @@
 import React from 'react'
-import { View, Text , Dimensions} from 'react-native'
-const {width} = Dimensions.get("screen")
+import { View, Text, Dimensions } from 'react-native'
+import Frame from './Frame';
 
-export default function ShowRoom() {
+const { width } = Dimensions.get("screen")
+
+export default function ShowRoom({ props, route, navigation }) {
+
+    const { index, item } = route.params;
+    // console.log('index', index);
+    // console.log('item', item);
+
+
+
+
     return (
-        <View style={{ flex: 1 , alignItems:"center", justifyContent:"center"}}>
-            <View
-                style={{
-                    height: 350,
-                    width: 250,
-                    backgroundColor: "red",
-                    borderWidth: 10,
-                    borderColor: "green"
-                }}>
+        <View style={{
+            flex: 1, alignItems: "center", justifyContent: "center",
+            elevation: 1,
+
+        }}>
+
+            {
+                !item ?
+                    <Text>loading....</Text> :
+                    <Frame
+                        pallets={item.pattern}
+
+                    />
+            }
+
+            {/*  */}
 
 
-            </View>
-            <View style={{marginTop:15}} >
+            <View style={{ marginTop: 15 }} >
                 <Text>Title</Text>
                 <Text>Author</Text>
             </View>
@@ -27,10 +43,11 @@ export default function ShowRoom() {
                     edition of 7 plus 1 artist's proof. This example was cast in March 1961.
                 </Text>
             </View>
-            <View style={{height:100, backgroundColor:"red",
-            width
-            
-        }}>
+            <View style={{
+                height: 100, backgroundColor: "red",
+                width
+
+            }}>
                 <Text>Download</Text>
             </View>
         </View>
