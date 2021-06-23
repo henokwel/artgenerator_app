@@ -192,7 +192,12 @@ export default function Home({ navigation }) {
 
         }}>
             <StatusBar hidden />
-            <Text>Colorful Mountain</Text>
+
+            <View
+            style={{  width:"35%", top:50, zIndex:2}}
+            >
+                <Text>Colorful Mountain</Text>
+            </View>
 
             <Animated.FlatList
                 data={DataPattern}
@@ -220,7 +225,7 @@ export default function Home({ navigation }) {
 
                     return <PalletCard
                         onPress={() => {
-                            navigation.navigate("Showroom",{
+                            navigation.navigate("Showroom", {
                                 index,
                                 item
                             })

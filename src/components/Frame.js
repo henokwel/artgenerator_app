@@ -2,6 +2,33 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import Svg, { Path, G, Defs } from "react-native-svg"
 
+
+const randMount = [
+    {
+        id: 1,
+        wayBack: {
+            d: "M0 114.038l7.6-10.481C15.2 93.076 26.3 56.49 41.5 39c15.2-17.228 23.8-46.678 39-36 15.2 10.285 28.8 47.715 44 58 15.2 10.678 42.7 24.87 57.9 28.604 15.2 3.472 30.4 24.434 38 34.915L228 135H0v-20.962z",
+            width: 228,
+            height: 135,
+            viewBox: "0 0 228 135"
+        },
+        middle: {
+            d: "M0 68.42l7.6-5.291c7.6-5.29 22.8-15.872 38-24.7C60.8 29.732 89.3-4.39 104.5 1c15.2 5.191 23.3 40.809 38.5 46 15.2 5.39 24.2 7.2 39.4 9.086 15.2 1.752 30.4 12.333 38 17.624L228 79H0V68.42z",
+            width: 228,
+            height: 79,
+            viewBox: "0 0 228 79"
+        },
+        front: {
+            d: "M144 56.42l-4.567-5.291c-4.566-5.29-9.8-16.3-18.933-25.129-9.133-8.696-13.367-23.39-22.5-18-9.133 5.191-27.867 28.309-37 33.5-9.133 5.39-22.867 7.744-32 9.629-9.133 1.752-12.867 5.29-17.433 10.58L7 67h137V56.42z",
+            width: 147,
+            height: 71,
+            viewBox: "0 0 147 71"
+        }
+
+    }
+]
+
+
 export default function Frame({ props, pallets }) {
     console.log(pallets);
 
@@ -53,9 +80,6 @@ export default function Frame({ props, pallets }) {
     }
 
 
-
-
-
     // const adjustedArray = pallets.map(color => {
     //     let arr = []
     //     if ((lightOrDark(color) === "dark")) return arr.push(color)
@@ -94,6 +118,7 @@ export default function Frame({ props, pallets }) {
                 shadowColor: 'black',
                 shadowOpacity: .7,
                 shadowOffset: { width: 1, height: 5 },
+
             }}>
 
 
