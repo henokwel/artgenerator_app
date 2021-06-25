@@ -24,7 +24,6 @@ const randMount = [
             height: 71,
             viewBox: "0 0 147 71"
         }
-
     },
     {
         id: 2,
@@ -96,10 +95,12 @@ const randMount = [
 
 
 export default function Frame({ props, pallets }) {
-    console.log(pallets);
+    // console.log(pallets);
 
     // Check for brightest and adjust order of array
     // check for the brightest and place first in array
+
+    const mountRandom = randMount[Math.floor(Math.random() * randMount.length)]
 
     const lightOrDark = (color) => {
 
@@ -169,6 +170,7 @@ export default function Frame({ props, pallets }) {
 
 
 
+
     return (
         <View
 
@@ -193,15 +195,15 @@ export default function Frame({ props, pallets }) {
             <View
             >
                 <Svg
-                    width={228}
-                    height={105}
-                    viewBox="0 0 228 105"
+                    width={mountRandom.wayBack.width}
+                    height={mountRandom.wayBack.height}
+                    viewBox={mountRandom.wayBack.viewBox}
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     {...props}
                 >
                     <Path
-                        d="M0 84.038l7.6-10.481c7.6-10.482 22.8-31.444 38-48.934C60.8 7.395 76-7.017 91.2 3.66c15.2 10.284 30.4 45.658 45.6 55.943 15.2 10.677 30.4-3.734 45.6 0 15.2 3.471 30.4 24.434 38 34.915L228 105H0V84.038z"
+                        d={mountRandom.wayBack.d}
                         fill={`#${pallets[1]}`}
                     />
                 </Svg>
@@ -213,16 +215,16 @@ export default function Frame({ props, pallets }) {
                 style={{ left: 0, zIndex: 1, bottom: 0, position: "absolute" }}
             >
                 <Svg
-                    width={228}
-                    height={53}
-                    viewBox="0 0 228 53"
+                    width={mountRandom.middle.width}
+                    height={mountRandom.middle.height}
+                    viewBox={mountRandom.middle.viewBox}
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     {...props}
                 >
                     <G filter="url(#prefix__filter0_i)">
                         <Path
-                            d="M0 42.42l7.6-5.291c7.6-5.29 22.8-15.872 38-24.7C60.8 3.732 76-3.541 91.2 1.848c15.2 5.191 30.4 23.046 45.6 28.238 15.2 5.39 30.4-1.885 45.6 0 15.2 1.752 30.4 12.333 38 17.623L228 53H0V42.42z"
+                            d={mountRandom.middle.d}
                             fill={`#${pallets[2]}`}
                         />
                     </G>
@@ -237,16 +239,16 @@ export default function Frame({ props, pallets }) {
             >
 
                 <Svg
-                    width={147}
-                    height={63}
-                    viewBox="0 0 147 63"
+                    width={mountRandom.front.width}
+                    height={mountRandom.front.height}
+                    viewBox={mountRandom.front.viewBox}
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     {...props}
                 >
                     <G filter="url(#prefix__filter0_d)">
                         <Path
-                            d="M144 48.42l-4.567-5.291c-4.566-5.29-13.7-15.872-22.833-24.7-9.133-8.697-18.267-15.97-27.4-10.581-9.133 5.191-18.267 23.046-27.4 28.238-9.133 5.39-18.267-1.885-27.4 0-9.133 1.752-18.267 12.333-22.833 17.623L7 59h137V48.42z"
+                            d={mountRandom.front.d}
                             fill={`#${pallets[3]}`}
                         />
                     </G>
