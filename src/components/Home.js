@@ -177,7 +177,6 @@ export default function Home({ navigation }) {
                 "73A580"
             ]
         },
-
     ]
     const SPACE = 20;
     const AV_Size = 70;
@@ -248,7 +247,7 @@ export default function Home({ navigation }) {
                                 // elevation: 3,
                                 shadowOffset: {
                                     width: 0,
-                                    height: 10
+                                    height: 20
                                 },
                                 transform: [{ scale }],
                                 height: 90
