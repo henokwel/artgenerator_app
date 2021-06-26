@@ -193,7 +193,7 @@ export default function Home({ navigation }) {
             <StatusBar hidden />
 
             <View
-            style={{  width:"35%", top:50, zIndex:2}}
+                style={{ width: "35%", top: 50, zIndex: 2 }}
             >
                 <Text>Colorful Mountain</Text>
             </View>
@@ -213,11 +213,16 @@ export default function Home({ navigation }) {
 
                 renderItem={({ item, index }) => {
 
-                    const inputRange = [-1, 0, ITEM_SIZE * index, ITEM_SIZE * (index + 3)]
+                    const inputRange = [-1, 0, ITEM_SIZE * index, ITEM_SIZE * (index + 2)]
                     const opacityInputRange = [-1, 0, ITEM_SIZE * index, ITEM_SIZE * (index + 3)]
 
                     const scale = scrollY.interpolate({
                         inputRange,
+                        outputRange: [1, 1, 1, 0]
+                    })
+
+                    const opacity = scrollY.interpolate({
+                        inputRange: opacityInputRange,
                         outputRange: [1, 1, 1, 0]
                     })
 
@@ -233,7 +238,6 @@ export default function Home({ navigation }) {
                     >
 
                         <Animated.View
-
                             style={{
                                 flexDirection: "row",
                                 alignItems: "center",
@@ -244,21 +248,23 @@ export default function Home({ navigation }) {
                                 shadowColor: "#000",
                                 shadowOpacity: .3,
                                 shadowRadius: 20,
+                                opacity,
                                 // elevation: 3,
                                 shadowOffset: {
                                     width: 0,
                                     height: 20
                                 },
                                 transform: [{ scale }],
-                                height: 90
-
+                                height: 90,
                             }}
                         >
                             <View
                                 style={{
                                     flexDirection: "row",
                                     borderWidth: 2,
-                                    // width:width
+                                    // width:250,
+
+
                                 }}
                             >
 
