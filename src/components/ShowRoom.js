@@ -1,15 +1,17 @@
-import React from 'react'
-import { View, Text, Dimensions } from 'react-native'
+import React, { useEffect, useState , useCallback} from 'react'
+import { View, Text, Dimensions, PermissionsAndroid, Button, Platform } from 'react-native'
 import Frame from './Frame';
+import { ViewShot, captureRef, captureScreen } from "react-native-view-shot";
+
 
 const { width } = Dimensions.get("screen")
 
 export default function ShowRoom({ props, route, navigation }) {
 
     const { index, item } = route.params;
+    const { capture, setCapture } = useState("")
     // console.log('index', index);
     // console.log('item', item);
-
 
 
 
@@ -23,6 +25,7 @@ export default function ShowRoom({ props, route, navigation }) {
             {
                 !item ?
                     <Text>loading....</Text> :
+                
                     <Frame
                         pallets={item.pattern}
 
@@ -48,6 +51,12 @@ export default function ShowRoom({ props, route, navigation }) {
                 width
 
             }}>
+
+                {/* <Button
+                    title="Download"
+
+                    onPress={() => handleCapture}
+                /> */}
                 <Text>Download</Text>
             </View>
         </View>
