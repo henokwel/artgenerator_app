@@ -28,7 +28,6 @@ export default function ShowRoom({ props, route, navigation }) {
 
                     <Frame
                         pallets={item.pattern}
-
                     />
             }
 
