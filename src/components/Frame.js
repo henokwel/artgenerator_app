@@ -41,32 +41,19 @@ export default function Frame({ props, pallets }) {
     useEffect(() => {
         // console.log('Loading');
         // console.log('loading state', loading);
-
-
         setTimeout(() => {
             setLoading(false)
         }, 500);
-
-
-
         return () => {
-
             setLoading(true)
         }
     }, [])
 
 
 
-
-
     /// start with loading and check for undefined 
     // if everyting work go to pic
     const { wayBack, middle, front } = !mountRandom ? defualtSvg : mountRandom
-
-
-
-
-
 
 
     return (
