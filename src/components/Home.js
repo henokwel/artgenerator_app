@@ -10,7 +10,7 @@ import {
 import PalletCard from './PalletCard'
 import { DataPattern } from '../utils/DataPattern';
 const { width, height } = Dimensions.get("screen")
- import Logo from '../assets/Logo'
+import Logo from '../assets/Logo'
 
 export default function Home({ props, navigation }) {
 
@@ -28,7 +28,7 @@ export default function Home({ props, navigation }) {
 
             <View
                 style={{
-                    width: "35%", top: 25, left:35, zIndex: 2,
+                    width: "35%", top: 25, left: 35, zIndex: 2,
                     // transform: [{ rotate: "-90deg" }]
                 }}
             >
@@ -101,14 +101,13 @@ export default function Home({ props, navigation }) {
                                     borderWidth: 2,
                                     // width:250,
 
-
                                 }}
                             >
 
                                 <View
                                     style={{
                                         backgroundColor: `#${item.pattern[0]}`,
-                                        width: 50,
+                                        width: 52,
                                         height: 100,
                                         // borderWidth:1
                                     }}
@@ -116,7 +115,7 @@ export default function Home({ props, navigation }) {
                                 <View
                                     style={{
                                         backgroundColor: `#${item.pattern[1]}`,
-                                        width: 50,
+                                        width: 52,
                                         height: 100,
                                         // borderWidth:1
                                     }}
@@ -124,7 +123,7 @@ export default function Home({ props, navigation }) {
                                 <View
                                     style={{
                                         backgroundColor: `#${item.pattern[2]}`,
-                                        width: 50,
+                                        width: 52,
                                         height: 100,
                                         // borderWidth:1
                                     }}
@@ -132,7 +131,7 @@ export default function Home({ props, navigation }) {
                                 <View
                                     style={{
                                         backgroundColor: `#${item.pattern[3]}`,
-                                        width: 50,
+                                        width: 52,
                                         height: 100,
                                         // borderWidth:1
                                     }}
@@ -143,6 +142,15 @@ export default function Home({ props, navigation }) {
                     </PalletCard>
                 }}
             />
+
+            {/* <View
+                style={{
+                    width: "35%", left: 35, zIndex: 2,
+                                    // transform: [{ rotate: "-90deg" }]
+                }}
+            >
+                <Text>INFO</Text>
+            </View> */}
         </View>
     );
 }

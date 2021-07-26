@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { View, Text, ActivityIndicator } from 'react-native'
+import React, { useEffect, useState, useRef } from 'react'
+import { View, Text, Animated } from 'react-native'
 import Svg, { Path, G, Defs } from "react-native-svg"
 import { defualtSvg } from '../utils/DataPattern'
 import { lightOrDark } from '../utils/LightOrDark'
@@ -19,13 +19,39 @@ export default function Frame({ props, pallets }) {
 
     // Sort the lightest color to the background
     pallets.sort((color) => lightOrDark(color) === "dark")
+    const fadeBack = useRef(new Animated.Value(0)).current;
 
+    const fadeMiddle = useRef(new Animated.Value(0)).current;
+    const fadeFront = useRef(new Animated.Value(0)).current;
+
+    const fadeIn = () => {
+        // Will change fadeAnim value to 1 in 5 seconds
+
+        Animated.timing(fadeBack, {
+            toValue: 1,
+            duration: 500,
+            useNativeDriver: true
+        }).start();
+
+        Animated.timing(fadeMiddle, {
+            toValue: 1,
+            duration: 950,
+            useNativeDriver: true
+        }).start();
+
+        Animated.timing(fadeFront, {
+            toValue: 1,
+            duration: 900,
+            useNativeDriver: true
+        }).start();
+    };
 
     useEffect(() => {
         // console.log('Loading');
         // console.log('loading state', loading);
         setTimeout(() => {
             setLoading(false)
+            fadeIn()
         }, 1700);
         return () => {
             setLoading(true)
@@ -62,7 +88,7 @@ export default function Frame({ props, pallets }) {
 
                     <>
                         {/* // 1 mountain , way back */}
-                        <View>
+                        <Animated.View style={{ opacity: fadeBack }}>
                             <Svg
                                 width={wayBack.width}
                                 height={wayBack.height}
@@ -76,11 +102,14 @@ export default function Frame({ props, pallets }) {
                                     fill={`#${pallets[1]}`}
                                 />
                             </Svg>
-                        </View>
+                        </Animated.View>
 
                         {/* //2 mountain, middle */}
 
-                        <View style={{ left: 0, zIndex: 1, bottom: 0, position: "absolute" }}                >
+                        <Animated.View style={{
+                            left: 0, zIndex: 1, bottom: 0, position: "absolute",
+                            opacity: fadeMiddle
+                        }}                >
                             <Svg
                                 width={middle.width}
                                 height={middle.height}
@@ -97,11 +126,15 @@ export default function Frame({ props, pallets }) {
                                 </G>
                                 <Defs></Defs>
                             </Svg>
-                        </View>
+                        </Animated.View>
 
                         {/* // 3 mountain, front */}
 
-                        <View style={{ right: -3, zIndex: 2, bottom: -4, position: "absolute" }}>
+                        <Animated.View style={{
+                            right: -3, zIndex: 2, bottom: -4, position: "absolute",
+                            opacity: fadeFront
+
+                        }}>
                             <Svg
                                 width={front.width}
                                 height={front.height}
@@ -118,7 +151,7 @@ export default function Frame({ props, pallets }) {
                                 </G>
                                 <Defs></Defs>
                             </Svg>
-                        </View>
+                        </Animated.View>
                     </>
             }
         </View>

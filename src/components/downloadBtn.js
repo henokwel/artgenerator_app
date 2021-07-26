@@ -13,14 +13,14 @@ export default function DownloadBtn({ onPress }) {
                 height: 70, width: 200
             }}
         >
-            <Text>Download</Text>
+            {/* <Text>Download</Text> */}
             <View style={{ height: 70, width: 70 }} >
                 <Svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={32}
                     height={32}
                     viewBox="0 0 32 32"
-                 >
+                >
                     <Path d="M24.59 16.59L17 24.17V4h-2v20.17l-7.59-7.58L6 18l10 10 10-10-1.41-1.41z" />
                     <Path
                         data-name="&lt;Transparent Rectangle&gt;"

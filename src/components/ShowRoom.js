@@ -11,15 +11,8 @@ export default function ShowRoom({ props, route, navigation }) {
 
     const { index, item } = route.params;
     const [capture, setCapture] = useState("")
-    // console.log('index', index);
-    // console.log('item', item);
-
 
     const selectedPoem = Poems[Math.floor(Math.random() * Poems.length)]
-
-    console.log(selectedPoem);
-
-
 
     return (
         <View style={{
@@ -38,11 +31,13 @@ export default function ShowRoom({ props, route, navigation }) {
             }
 
             <View style={{ marginTop: 15, width: 240, marginBottom: 15 }} >
-                <Text>Title : {selectedPoem.author}</Text>
+                <Text style={{ fontStyle: "italic" }}>
+                    {selectedPoem.author}
+                </Text>
             </View>
 
-            <View style={{ width: 240 }}>
-                <Text >
+            <View style={{ width: 240, maxHeight: 150, }}>
+                <Text style={{ fontSize: 16, lineHeight: 25, textAlign: "justify" }} >
                     {selectedPoem.content}
                 </Text>
             </View>

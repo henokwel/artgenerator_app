@@ -44,7 +44,8 @@ export default Poems = [
         author: "Still Here",
         content: `
         I been scarred and battered.
-        My hopes the wind done scattered.
+        My hopes the wind done 
+        scattered.
         Snow has friz me,
         Sun has baked me,
     `

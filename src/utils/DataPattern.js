@@ -1,16 +1,16 @@
 
 export const DataPattern = [
     {
-        "id": "dsf3dsf",
+        "id": "dsfdsf",
         "pattern": [
-            "96CFC9",
-            "467292",
-            "AAA694",
-            "F4E8E8"
+            "f4f1de",
+            "e07a5f",
+            "f2cc8f",
+            "81b29a"
         ]
     },
     {
-        "id": "skdlsdf2jfsdf",
+        "id": "skdlsdfjfsdf",
         "pattern": [
             "283D3B",
             "EDDDD4",
@@ -18,76 +18,14 @@ export const DataPattern = [
             "772E25"
         ]
     },
-    {
-        "id": "F48656s8",
-        "pattern": [
-            "DD614A",
-            "F48668",
-            "F4A698",
-            "73A580"
-        ]
-    },
-    {
-        "id": "dsdffd4sf",
-        "pattern": [
-            "7C6C77",
-            "96CFC9",
-            "467292",
-            "AAA694"
-        ]
-    },
-    {
-        "id": "skdlj3ff3sdf",
-        "pattern": [
-            "283D3B",
-            "EDDDD4",
-            "C44536",
-            "772E25"
-        ]
-    },
-    {
-        "id": "753A4580",
-        "pattern": [
-            "DD614A",
-            "F48668",
-            "F4A698",
-            "73A580"
-        ]
-    },
-    {
-        "id": "dsfd434sf",
-        "pattern": [
-            "7C6C77",
-            "96CFC9",
-            "467292",
-            "AAA694"
-        ]
-    },
-    {
-        "id": "skd8l3jfsdf",
-        "pattern": [
-            "283D3B",
-            "EDDDD4",
-            "C44536",
-            "772E25"
-        ]
-    },
-    {
-        "id": "73A585980",
-        "pattern": [
-            "DD614A",
-            "F48668",
-            "F4A698",
-            "73A580"
-        ]
-    },
+
     {
         "id": "F48566s8",
         "pattern": [
-            "DD614A",
-            "F48668",
-            "F4A698",
-            "73A580"
+            "6A8D73",
+            "F4FDD9",
+            "FFE8C2",
+            "F0A868"
         ]
     },
     {
@@ -102,46 +40,101 @@ export const DataPattern = [
     {
         "id": "skdlj3ff4sdf",
         "pattern": [
-            "283D3B",
-            "EDDDD4",
-            "C44536",
-            "772E25"
+            "e63946",
+            "f1faee",
+            "a8dadc",
+            "1d3557"
         ]
     },
     {
         "id": "73A45840",
         "pattern": [
-            "DD614A",
-            "F48668",
-            "F4A698",
-            "73A580"
+            "000000",
+            "14213d",
+            "fca311",
+            "e5e5e5"
         ]
     },
     {
         "id": "dsfd345sf",
         "pattern": [
-            "7C6C77",
-            "96CFC9",
-            "467292",
-            "AAA694"
+            "fb8500",
+            "023047",
+            "8ecae6",
+            "219ebc"
         ]
     },
     {
         "id": "skd8lj4fsdf",
         "pattern": [
-            "283D3B",
-            "EDDDD4",
-            "C44536",
-            "772E25"
+            "00afb9",
+            "8d99ae",
+            "2b2d42",
+            "ef233c"
         ]
     },
     {
         "id": "73A589480",
         "pattern": [
-            "DD614A",
-            "F48668",
-            "F4A698",
-            "73A580"
+            "9b5de5",
+            "fee440",
+            "00f5d4",
+            "e5383b"
+        ]
+    },
+    {
+        "id": "700A589480",
+        "pattern": [
+            "353535",
+            "3c6e71",
+            "284b63",
+            "c77dff"
+        ]
+    },
+    {
+        "id": "7010A589480",
+        "pattern": [
+            "eed7c5",
+            "eee2df",
+            "c97c5d",
+            "b36a5e"
+        ]
+    },
+
+    {
+        "id": "7020A589480",
+        "pattern": [
+            "6a994e",
+            "f2e8cf",
+            "284b63",
+            "bee9e8"
+        ]
+    },
+    {
+        "id": "7040A589480",
+        "pattern": [
+            "353535",
+            "3c6e71",
+            "284b63",
+            "c77dff"
+        ]
+    },
+    {
+        "id": "7060A589480",
+        "pattern": [
+            "d4e09b",
+            "f6f4d2",
+            "f19c79",
+            "a44a3f"
+        ]
+    },
+    {
+        "id": "70880A589480",
+        "pattern": [
+            "ff6b35",
+            "f7c59f",
+            "efefd0",
+            "1a659e"
         ]
     },
 ]
