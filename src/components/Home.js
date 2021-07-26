@@ -10,8 +10,7 @@ import {
 import PalletCard from './PalletCard'
 import { DataPattern } from '../utils/DataPattern';
 const { width, height } = Dimensions.get("screen")
-import Svg, { Path, G, Defs } from "react-native-svg"
-import Logo from '../assets/Logo'
+ import Logo from '../assets/Logo'
 
 export default function Home({ props, navigation }) {
 
@@ -22,17 +21,14 @@ export default function Home({ props, navigation }) {
 
     const scrollY = React.useRef(new Animated.Value(0)).current
 
-
     return (
-        <View style={{
-            flex: 1,
+        <View style={{ flex: 1, }}>
 
-        }}>
             <StatusBar hidden />
 
             <View
                 style={{
-                    width: "35%", top: 19, zIndex: 2,
+                    width: "35%", top: 25, left:35, zIndex: 2,
                     // transform: [{ rotate: "-90deg" }]
                 }}
             >

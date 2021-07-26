@@ -2,7 +2,8 @@ import React, { useEffect, useState, useCallback } from 'react'
 import { View, Text, Dimensions, PermissionsAndroid, Button, Platform } from 'react-native'
 import Frame from './Frame';
 import { ViewShot, captureRef, captureScreen } from "react-native-view-shot";
-
+import DownloadBtn from './downloadBtn';
+import Poems from '../utils/PoemData';
 
 const { width } = Dimensions.get("screen")
 
@@ -12,6 +13,11 @@ export default function ShowRoom({ props, route, navigation }) {
     const [capture, setCapture] = useState("")
     // console.log('index', index);
     // console.log('item', item);
+
+
+    const selectedPoem = Poems[Math.floor(Math.random() * Poems.length)]
+
+    console.log(selectedPoem);
 
 
 
@@ -31,28 +37,29 @@ export default function ShowRoom({ props, route, navigation }) {
                     />
             }
 
-            {/*  */}
-
-
-            <View style={{ marginTop: 15 }} >
-                <Text>Title</Text>
-                <Text>Author</Text>
+            <View style={{ marginTop: 15, width: 240, marginBottom: 15 }} >
+                <Text>Title : {selectedPoem.author}</Text>
             </View>
 
-            <View style={{ width: 280 }}>
+            <View style={{ width: 240 }}>
                 <Text >
-                    Conceived on 15th March 1959 and cast in bronze in a numbered
-                    edition of 7 plus 1 artist's proof. This example was cast in March 1961.
+                    {selectedPoem.content}
                 </Text>
             </View>
-            <View style={{ height: 100, backgroundColor: "red", width }}>
+
+
+            <View style={{
+                height: 80, width, alignItems: "flex-end",
+                marginTop: 45,
+            }}>
 
                 {/* <Button
                     title="Download"
 
                     onPress={() => handleCapture}
                 /> */}
-                <Text>Download</Text>
+                <DownloadBtn />
+
             </View>
         </View>
     )
