@@ -18,16 +18,6 @@ export const DataPattern = [
             "772E25"
         ]
     },
-
-    {
-        "id": "F48566s8",
-        "pattern": [
-            "6A8D73",
-            "F4FDD9",
-            "FFE8C2",
-            "F0A868"
-        ]
-    },
     {
         "id": "dsdffds4f",
         "pattern": [
@@ -46,15 +36,7 @@ export const DataPattern = [
             "1d3557"
         ]
     },
-    {
-        "id": "73A45840",
-        "pattern": [
-            "000000",
-            "14213d",
-            "fca311",
-            "e5e5e5"
-        ]
-    },
+
     {
         "id": "dsfd345sf",
         "pattern": [
@@ -62,6 +44,15 @@ export const DataPattern = [
             "023047",
             "8ecae6",
             "219ebc"
+        ]
+    },
+    {
+        "id": "F48566s8",
+        "pattern": [
+            "FFE8C2",
+            "F4FDD9",
+            "6A8D73",
+            "F0A868"
         ]
     },
     {
@@ -98,6 +89,15 @@ export const DataPattern = [
             "eee2df",
             "c97c5d",
             "b36a5e"
+        ]
+    },
+    {
+        "id": "73A45840",
+        "pattern": [
+            "000000",
+            "14213d",
+            "fca311",
+            "e5e5e5"
         ]
     },
 

@@ -23,7 +23,7 @@ export default function ShowRoom({ props, route, navigation }) {
 
             {
                 !item ?
-                    <Text>loading....</Text> :
+                    <Text>loading..</Text> :
 
                     <Frame
                         pallets={item.pattern}
@@ -41,7 +41,6 @@ export default function ShowRoom({ props, route, navigation }) {
                     {selectedPoem.content}
                 </Text>
             </View>
-
 
             <View style={{
                 height: 80, width, alignItems: "flex-end",
