@@ -5,12 +5,13 @@ import { defualtSvg } from '../utils/DataPattern'
 import { lightOrDark } from '../utils/LightOrDark'
 import { randMount } from '../utils/RandomMount'
 import LottieView from 'lottie-react-native'
+ 
 
 
-export default function Frame({ props, pallets }) {
+export default function Frame({ props, pallets, ref }) {
     const [loading, setLoading] = useState(true)
     // console.log(pallets);
-
+ 
 
     // Check for brightest and adjust order of array
     // check for the brightest and place first in array

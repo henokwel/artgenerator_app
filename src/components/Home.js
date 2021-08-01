@@ -6,11 +6,12 @@ import {
     TouchableOpacity, Easing, SafeAreaViewBase, SafeAreaView,
 
 } from 'react-native';
-
 import PalletCard from './PalletCard'
 import { DataPattern } from '../utils/DataPattern';
 const { width, height } = Dimensions.get("screen")
 import Logo from '../assets/Logo'
+
+
 
 export default function Home({ props, navigation }) {
 
