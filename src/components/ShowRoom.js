@@ -40,12 +40,27 @@ async function savePicture(tag) {
 
 export default function ShowRoom({ props, route, navigation }) {
 
-    const { index, item } = route.params;
     const [capture, setCapture] = useState("")
+    const [loading, setLoading] = useState(true)
+    const { index, item } = route.params;
 
     const viewRef = useRef()
 
     const selectedPoem = Poems[Math.floor(Math.random() * Poems.length)]
+
+
+
+    useEffect(() => {
+        // console.log('Loading');
+        // console.log('loading state', loading);
+        setTimeout(() => {
+            setLoading(false)
+            // fadeIn()
+        }, 1750);
+        return () => {
+            setLoading(true)
+        }
+    }, [])
 
 
     const onCapture = async () => {
@@ -98,12 +113,17 @@ export default function ShowRoom({ props, route, navigation }) {
                 marginTop: 45,
             }}>
 
-                <Button
-                    title="Download"
+                {
+                    !loading ?
+                        <Button
+                            title="Download"
 
-                    onPress={onCapture}
-                />
-                <DownloadBtn />
+                            onPress={onCapture}
+                        /> : <Text></Text>
+
+                }
+
+                {/* <DownloadBtn /> */}
 
             </View>
         </View >
