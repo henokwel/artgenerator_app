@@ -40,7 +40,7 @@ async function savePicture(tag) {
 
 export default function ShowRoom({ props, route, navigation }) {
 
-    const [capture, setCapture] = useState("")
+    // const [capture, setCapture] = useState("")
     const [loading, setLoading] = useState(true)
     const { index, item } = route.params;
 
@@ -113,18 +113,16 @@ export default function ShowRoom({ props, route, navigation }) {
                 height: 80, width, alignItems: "flex-end",
                 marginTop: 45,
             }}>
-
                 {
                     !loading ?
-                        <Button
-                            title="Download"
-
-                            onPress={onCapture}
-                        /> : <Text></Text>
-
+                        // <Button
+                        //     title="Download"
+                        //     onPress={onCapture}
+                        // /> 
+                        <DownloadBtn   onPress={onCapture} />
+                        : <Text></Text>
                 }
 
-                {/* <DownloadBtn /> */}
 
             </View>
         </View >
