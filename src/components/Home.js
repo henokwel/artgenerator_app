@@ -29,7 +29,7 @@ export default function Home({ props, navigation }) {
 
             <View
                 style={{
-                    width: "35%", top: 25, left: 35, zIndex: 2,
+                    width: "35%", top: 55, left: 35, zIndex: 2,
                     // transform: [{ rotate: "-90deg" }]
                 }}
             >
