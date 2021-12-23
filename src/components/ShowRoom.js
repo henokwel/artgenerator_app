@@ -65,8 +65,8 @@ export default function ShowRoom({ props, route, navigation }) {
 
     const onCapture = async () => {
         captureRef(viewRef, {
-            // height: 1900,
-            // width: 960,
+            // height: 730,
+            // width: 412,
             quality: 1,
             format: 'png',
         }).then(
@@ -102,8 +102,9 @@ export default function ShowRoom({ props, route, navigation }) {
                 </Text>
             </View>
 
-            <View style={{ width: 240, maxHeight: 150, }}>
-                <Text style={{ fontSize: 16, lineHeight: 25, textAlign: "justify" }} >
+            <View style={{ width:"100%", alignItems:"center", justifyContent:"center", maxHeight: 150 }}>
+                <Text style={{ fontSize: 16, lineHeight: 25,
+            }} >
                     {selectedPoem.content}
                 </Text>
             </View>
